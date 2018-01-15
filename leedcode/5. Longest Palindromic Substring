@@ -1,0 +1,35 @@
+```python
+
+# Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+
+# Example:
+
+# Input: "babad"
+
+# Output: "bab"
+
+# Note: "aba" is also a valid answer.
+# Example:
+
+# Input: "cbbd"
+
+# Output: "bb"
+    
+class Solution(object):
+    def longestPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+
+        out = ""
+        for i in range(len(s)):
+            out = max(out, self.compare(s, i, i), self.compare(s, i, i+1), key = len)
+        return out
+    
+    def compare(self, s, i, j):
+        while (i>=0) and (j < len(s)) and (s[i] == s[j]):
+            i -= 1
+            j += 1
+        return s[i+1:j]
+```
