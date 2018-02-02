@@ -11,7 +11,7 @@ return [1,6],[8,10],[15,18].
 #     def __init__(self, s=0, e=0):
 #         self.start = s
 #         self.end = e
-
+```python
 class Solution:
     def merge(self, intervals):
         """
@@ -28,3 +28,4 @@ class Solution:
             return out
         else:
             return intervals
+            ```
